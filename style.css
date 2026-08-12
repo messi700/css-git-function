@@ -1,0 +1,33 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; padding: 1.5rem; background: #f4f4f5; text-align: center; }
+h1 { margin-bottom: 1.5rem; }
+
+/* CSS GRID CONTAINER */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile: 1 col */
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); } /* Tablet: 2 cols */
+}
+
+@media (min-width: 900px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); } /* Desktop: 3 cols */
+  .card-feat { grid-column: span 2; } /* Demonstrates grid placement */
+}
+
+/* CARD STYLES */
+.card {
+  background: #fff;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
+
+.card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.card h3 { margin-top: 0.75rem; font-size: 1.1rem; }
